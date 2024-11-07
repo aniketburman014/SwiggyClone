@@ -1,0 +1,17 @@
+<div class="">
+    <img src="assets/images/App_download_banner.avif" alt="App-download-banner" class="mb-20">
+    
+    <div class="p-8 bg-gray-50 flex-col justify-center items-center ">
+        <div *ngFor="let section of deliverySections" class="mb-20">
+          <h2 class="text-xl font-bold mb-4">{{ section.title }}</h2>
+          <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+            <button *ngFor="let city of section.cities" class="py-2 px-4 border border-gray-300 font-semibold rounded-xl w-72 text-gray-500 hover:bg-gray-100">
+              {{ city }}
+            </button>
+            <button class="py-2 px-4 border border-gray-300 rounded-xl w-72 font-semibold text-orange-500 hover:bg-gray-100">
+              Show More <span>&#x25BC;</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>

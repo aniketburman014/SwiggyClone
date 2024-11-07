@@ -1,0 +1,39 @@
+<header class="flex items-center justify-between bg-custom-orange p-4">
+  <div class="flex items-center space-x-2">
+    <div class="rounded-full p-2 w-44">
+      <img src="assets/images/Swiggy_logo.png" alt="Swiggy Logo">
+    </div>
+  </div>
+
+  <!-- Links Section -->
+  <nav class="flex items-center space-x-6 text-white font-semibold">
+    <a href="#" class="hover:underline">Swiggy Corporate</a>
+    <a href="#" class="hover:underline">Partner with us</a>
+  </nav>
+
+  <!-- Buttons Section -->
+  <div class="flex items-center space-x-4">
+    <button class="flex items-center px-4 py-2 border border-white rounded-xl text-white font-semibold hover:bg-white hover:text-orange-500 transition h-14">
+      <span class="text-md">Get the App</span>
+      <span class="ml-2">
+        <img src="assets/images/arrow-up-right.svg" class="w-5" alt="arrow icon">
+      </span>
+    </button>
+
+    <!-- Conditionally display Sign in or Cart button -->
+    <button *ngIf="!isLoggedIn" (click)="toggleLoginPopup()" class="px-4 py-2 bg-black text-white font-semibold rounded-xl hover:bg-gray-800 transition h-14 w-36">
+      <span class="text-md">Sign in</span>
+    </button>
+
+    <button *ngIf="!isLoggedIn && cartQuantity > 0" (click)="goToCheckout()" class="px-4 font-semibold transition h-14 w-36">
+      <span class="relative text-md p-1 rounded-full">
+        <img src="assets/images/icon-cart.svg" alt="Cart Icon" class="w-6 h-6" id="cartIcon">
+      </span>
+      <span class="absolute w-3 top-6 right-28 text-white text-md rounded-full px-2 py-1">{{ cartQuantity }}</span>
+    </button>
+    
+  </div>
+
+  <!-- Login Component -->
+
+</header>
